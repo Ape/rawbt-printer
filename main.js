@@ -7,6 +7,10 @@ function showError(message) {
   element.classList.add("show");
 }
 
+function hideError() {
+  document.getElementById("errorAlert").classList.remove("show");
+}
+
 function makeCommand() {
   return {
     command: "print",
@@ -21,6 +25,8 @@ function makeCommand() {
 }
 
 function printRawbt(job){
+  hideError();
+
   const socket = new WebSocket("ws://localhost:40213/");
 
   socket.addEventListener("error", event => showError("Failed to connect to RawBT WS API"));
