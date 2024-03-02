@@ -20,11 +20,11 @@ function makeCommand() {
   };
 }
 
-function printRawbt(commands){
+function printRawbt(job){
   const socket = new WebSocket("ws://localhost:40213/");
 
   socket.addEventListener("error", event => showError("Failed to connect to RawBT WS API"));
-  socket.addEventListener("open", event => socket.send(JSON.stringify({commands: commands})));
+  socket.addEventListener("open", event => socket.send(JSON.stringify(job)));
   socket.addEventListener("message", event => {
     response = JSON.parse(event.data);
 
@@ -45,6 +45,15 @@ function printRawbt(commands){
   });
 }
 
+document.getElementById("preview").addEventListener("click", event => {
+  printRawbt({
+    commands: [makeCommand()],
+    printer: "virtual",
+  });
+});
+
 document.getElementById("print").addEventListener("click", event => {
-  printRawbt([makeCommand()]);
+  printRawbt({
+    commands: [makeCommand()],
+  });
 });
