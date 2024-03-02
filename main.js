@@ -3,12 +3,12 @@ function showError(message) {
 
   console.error(message);
   element.textContent = message;
-  element.classList.remove("d-none");
   element.classList.add("show");
+  document.getElementById("errorContainer").classList.remove("d-none");
 }
 
 function hideError() {
-  document.getElementById("errorAlert").classList.remove("show");
+  document.getElementById("errorContainer").classList.add("d-none");
 }
 
 function makeCommand() {

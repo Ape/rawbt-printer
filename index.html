@@ -11,8 +11,10 @@
 <body>
   <div class="container main-container">
     <h1>RawBT Printer</h1>
-    <div id="errorAlert" class="alert alert-danger alert-dismissible fade d-none" role="alert"></div>
-    <div class="input-group">
+    <div id="errorContainer" class="input-group d-none">
+      <div id="errorAlert" class="alert alert-danger alert-dismissible fade" role="alert"></div>
+    </div>
+    <div class="input-group flex-grow-1">
       <textarea id="text" class="form-control"></textarea>
     </div>
     <div class="input-group">
@@ -33,8 +35,10 @@
         <input type="checkbox" id="bold" class="form-check-input">
       </div>
     </div>
-    <button id="preview" class="btn btn-primary">Preview</button>
-    <button id="print" class="btn btn-primary">Print</button>
+    <div>
+      <button id="preview" class="btn btn-primary">Preview</button>
+      <button id="print" class="btn btn-primary">Print</button>
+    </div>
   </div>
   <script src="main.js"></script>
 </body>
