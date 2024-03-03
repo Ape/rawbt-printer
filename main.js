@@ -63,3 +63,7 @@ document.getElementById("print").addEventListener("click", event => {
     commands: [makeCommand()],
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  FormPersistence.persist(document.getElementById("main-container"));
+});

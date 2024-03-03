@@ -10,7 +10,7 @@ textarea {
   resize: none;
 }
 
-.main-container {
+#main-container {
   height: 100%;
   display: flex;
   flex-direction: column;
