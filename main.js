@@ -1,14 +1,14 @@
 function showError(message) {
-  const element = document.getElementById("errorAlert");
+  const element = document.getElementById("error-alert");
 
   console.error(message);
   element.textContent = message;
   element.classList.add("show");
-  document.getElementById("errorContainer").classList.remove("d-none");
+  document.getElementById("error-container").classList.remove("d-none");
 }
 
 function hideError() {
-  document.getElementById("errorContainer").classList.add("d-none");
+  document.getElementById("error-container").classList.add("d-none");
 }
 
 function makeCommand() {
